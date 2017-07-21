@@ -1,0 +1,28 @@
+{
+    "name": "restler/application",
+    "description": "Application boiler-plate for Luracast Restler, an api first micro framework",
+    "keywords": [
+        "restler",
+        "rest",
+        "api",
+        "application"
+    ],
+    "require": {
+        "restler/framework": "dev-master",
+        "gabordemooij/redbean": "dev-master",
+        "symfony/yaml": "3.4.x-dev"
+    },
+    "license": "LGPL 2",
+    "authors": [
+        {
+            "name": "Luracast",
+            "email": "arul@luracast.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "" : "src"
+        }
+    }
+}
