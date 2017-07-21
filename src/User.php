@@ -57,9 +57,9 @@ class User implements iIdentifyUser
                 static::$current_user = JWT::decode($matches[1], static::$secret_key);
                 static::setUniqueIdentifier(static::$current_user->id);
             }
+        } else {
+            static::setUniqueIdentifier(0);
         }
-
-        static::setUniqueIdentifier( static::$current_user->id ?? 0  );
         
     }
 
@@ -95,10 +95,10 @@ class User implements iIdentifyUser
      *
      * @return string|int
      */
-    public static function getCurrentUser($param=null)
+    public static function getCurrentUser($param=null,$cmp=null)
     {
         if (!static::$initialized) static::init();
-        return $param ? static::$current_user->$param?? false : static::$current_user;
+        return $param ? (static::$current_user->$param ?: false) : static::$current_user;
     }
     
     
